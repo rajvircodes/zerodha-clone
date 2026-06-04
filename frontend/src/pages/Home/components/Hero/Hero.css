@@ -1,0 +1,22 @@
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero img {
+    max-width: 800px;
+    width: 100%;
+}
+.hero h1 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    padding: 12px 24px;
+    cursor: pointer;
+}
