@@ -1,0 +1,14 @@
+header {
+    padding: 1rem 4rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+nav div:last-child{
+    display: flex;
+    gap: 2rem;
+}
