@@ -1,0 +1,46 @@
+.trust-section {
+    padding: 5rem 2rem;
+}
+
+.trust-container {
+    max-width: 1200px;
+    margin:  0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.trust-content {
+    flex: 1;
+}
+
+.trust-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.trust-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.trust-image {
+  /* flex: 1; */
+}
+
+.trust-image img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+}
+
+
+
