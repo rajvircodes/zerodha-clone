@@ -1,3 +1,4 @@
+import Ecosystem from "./components/Ecosystem/Ecosystem"
 import Hero from "./components/Hero/Hero"
 import TrustSection from "./components/TrustSection/TrustSection"
 
@@ -6,6 +7,7 @@ const Home = () => {
     <>
       <Hero/>
       <TrustSection/>
+      <Ecosystem/>
     </>
   )
 }

@@ -1,0 +1,47 @@
+.ecosystem-section {
+  padding: 5rem 2rem;
+}
+
+.ecosystem-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.ecosystem-image {
+  flex: 1;
+}
+
+.ecosystem-image img {
+  width: 100%;
+  display: block;
+}
+
+.ecosystem-content {
+  flex: 1;
+}
+
+.ecosystem-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ecosystem-content p {
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.ecosystem-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.ecosystem-links a {
+  text-decoration: none;
+  color: #387ed1;
+  font-weight: 500;
+}

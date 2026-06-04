@@ -46,7 +46,7 @@ const TrustSection = () => {
         {/* Right Side */}
         <div className="trust-image">
           <img
-            src="https://zerodha.com/static/images/ecosystem.png"
+            src="https://zerodha.com/z-connect/wp-content/uploads/2019/01/No.-1-Broker-India.png"
             alt="Zerodha Ecosystem"
           />
         </div>

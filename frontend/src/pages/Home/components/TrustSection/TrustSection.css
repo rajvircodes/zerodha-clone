@@ -33,7 +33,7 @@
 }
 
 .trust-image {
-  /* flex: 1; */
+  flex: 1;
 }
 
 .trust-image img {
