@@ -1,7 +1,15 @@
-const Pricing = () => {
+import "./Pricing.css";
+
+function Pricing() {
   return (
-    <div>Pricing</div>
-  )
+    <section className="pricing-page">
+      <h1>Pricing</h1>
+
+      <p>
+        Simple and transparent pricing.
+      </p>
+    </section>
+  );
 }
 
-export default Pricing
+export default Pricing;

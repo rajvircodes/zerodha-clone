@@ -1,8 +1,15 @@
+import "./Support.css";
 
-const Support = () => {
+function Support() {
   return (
-    <div>Support</div>
-  )
+    <section className="support-page">
+      <h1>Support Portal</h1>
+
+      <p>
+        Find answers and get help quickly.
+      </p>
+    </section>
+  );
 }
 
-export default Support
+export default Support;
