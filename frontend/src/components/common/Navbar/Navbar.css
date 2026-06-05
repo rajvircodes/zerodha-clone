@@ -1,12 +1,22 @@
 header {
-    padding: 1rem 4rem;
-    background-color:;
+    padding: 1.5rem 10rem;
+    background-color: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items:center;
+}
+
+.nav-logo img{
+    width: 8rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
 }
 
 nav div:last-child{

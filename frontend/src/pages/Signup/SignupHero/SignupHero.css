@@ -1,0 +1,51 @@
+.signup-hero {
+  padding: 5rem 2rem;
+}
+
+.signup-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.signup-content {
+  flex: 1;
+}
+
+.signup-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.signup-content p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.signup-btn {
+  border: none;
+  background-color: #387ed1;
+  color: white;
+
+  padding: 14px 28px;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.signup-image {
+  flex: 1;
+}
+
+.signup-image img {
+  width: 100%;
+  display: block;
+}
+
+
