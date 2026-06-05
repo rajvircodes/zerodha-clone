@@ -1,0 +1,38 @@
+.open-account {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.open-account-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.open-account h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.open-account p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.signup-btn {
+  border: none;
+  background: #387ed1;
+  color: white;
+
+  padding: 14px 32px;
+
+  font-size: 1rem;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  opacity: 0.9;
+}
