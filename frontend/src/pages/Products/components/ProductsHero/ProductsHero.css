@@ -1,0 +1,13 @@
+.products-hero {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.products-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.products-hero p {
+  color: #666;
+}

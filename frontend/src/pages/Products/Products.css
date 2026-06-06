@@ -1,4 +1,11 @@
-.products-page {
-padding: 6rem 2rem;
-text-align: center;
+.products-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 2rem;
 }
