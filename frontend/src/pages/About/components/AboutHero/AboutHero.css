@@ -1,0 +1,13 @@
+.about-hero {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  color: #666;
+}

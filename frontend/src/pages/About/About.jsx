@@ -1,14 +1,14 @@
 import "./About.css";
 
+import AboutHero from "./components/AboutHero/AboutHero";
+import MissionSection from "./components/MissionSection/MissionSection";
+
 function About() {
   return (
-    <section className="about-page">
-      <h1>About Zerodha</h1>
-
-      <p>
-        Learn more about our journey and mission.
-      </p>
-    </section>
+    <>
+      <AboutHero />
+      <MissionSection />
+    </>
   );
 }
 
