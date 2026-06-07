@@ -1,4 +1,13 @@
-.pricing-page {
-padding: 6rem 2rem;
-text-align: center;
+.pricing-grid {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 2rem;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2rem;
 }
