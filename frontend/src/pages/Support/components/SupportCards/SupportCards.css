@@ -1,0 +1,31 @@
+.support-cards {
+  padding: 4rem 2rem;
+}
+
+.support-grid {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2rem;
+}
+
+.support-card {
+  border: 1px solid #e6e6e6;
+
+  padding: 2rem;
+
+  text-align: center;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.support-card:hover {
+  transform: translateY(-4px);
+}

@@ -1,0 +1,13 @@
+.support-hero {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.support-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.support-hero p {
+  color: #666;
+}
