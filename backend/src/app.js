@@ -1,10 +1,11 @@
-import express from 'express'
-import cors from 'cors'
-import healthRoutes from './routes/health.routes.js';
+import express from "express";
+import cors from "cors";
+import healthRoutes from "./routes/health.routes.js";
+import holdingRoutes from "./routes/holding.routes.js";
+const app = express();
 
-const app = express()
+app.use(cors());
+app.use("/api/health", healthRoutes);
+app.use("/api/holdings", holdingRoutes);
 
-app.use(cors())
-app.use('/api/health',healthRoutes)
-
-export default app
+export default app;
