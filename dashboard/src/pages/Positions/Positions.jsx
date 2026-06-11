@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { getPositions } from "../../services/positions.service";
 
+import DataList from "../../components/ui/DataList/DataList";
+
 function Positions() {
   const [positions, setPositions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,11 +29,14 @@ function Positions() {
   }
 
   return (
-    <div>
-      <h1>Positions</h1>
-
-      {positions.map((position) => (
-        <div key={position._id}>
+    <DataList
+      title="Positions"
+      items={positions}
+      renderItem={(position) => (
+        <div
+          className="data-item"
+          key={position._id}
+        >
           <h3>{position.name}</h3>
 
           <p>Qty: {position.qty}</p>
@@ -39,11 +44,9 @@ function Positions() {
           <p>Price: ₹{position.price}</p>
 
           <p>Product: {position.product}</p>
-
-          <hr />
         </div>
-      ))}
-    </div>
+      )}
+    />
   );
 }
 

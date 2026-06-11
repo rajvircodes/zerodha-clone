@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { getOrders } from "../../services/orders.service";
 
+import DataList from "../../components/ui/DataList/DataList";
+
 function Orders() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,11 +29,14 @@ function Orders() {
   }
 
   return (
-    <div>
-      <h1>Orders</h1>
-
-      {orders.map((order) => (
-        <div key={order._id}>
+    <DataList
+      title="Orders"
+      items={orders}
+      renderItem={(order) => (
+        <div
+          className="data-item"
+          key={order._id}
+        >
           <h3>{order.name}</h3>
 
           <p>Qty: {order.qty}</p>
@@ -39,11 +44,9 @@ function Orders() {
           <p>Price: ₹{order.price}</p>
 
           <p>Mode: {order.mode}</p>
-
-          <hr />
         </div>
-      ))}
-    </div>
+      )}
+    />
   );
 }
 

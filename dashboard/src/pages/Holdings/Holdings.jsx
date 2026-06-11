@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+
 import { getHoldings } from "../../services/holdings.service";
+
+import DataList from "../../components/ui/DataList/DataList";
 
 function Holdings() {
   const [holdings, setHoldings] = useState([]);
@@ -26,21 +29,24 @@ function Holdings() {
   }
 
   return (
-    <div>
-      <h1>Holdings</h1>
-
-      {holdings.map((holding) => (
-        <div key={holding._id}>
+    <DataList
+      title="Holdings"
+      items={holdings}
+      renderItem={(holding) => (
+        <div
+          className="data-item"
+          key={holding._id}
+        >
           <h3>{holding.name}</h3>
 
           <p>Qty: {holding.qty}</p>
 
           <p>Price: ₹{holding.price}</p>
 
-          <hr />
+          <p>Net: {holding.net}</p>
         </div>
-      ))}
-    </div>
+      )}
+    />
   );
 }
 
