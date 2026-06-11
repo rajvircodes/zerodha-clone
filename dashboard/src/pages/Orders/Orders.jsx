@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
 import { getOrders } from "../../services/orders.service";
-
 import DataList from "../../components/ui/DataList/DataList";
+import OrderForm from "../../components/ui/OrderForm/OrderForm";
+
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -29,6 +30,10 @@ function Orders() {
   }
 
   return (
+
+    <>
+
+    <OrderForm/>
     <DataList
       title="Orders"
       items={orders}
@@ -47,6 +52,7 @@ function Orders() {
         </div>
       )}
     />
+    </>
   );
 }
 

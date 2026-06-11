@@ -7,6 +7,7 @@ import orderRoutes from './routes/order.routes.js'
 const app = express();
 
 app.use(cors());
+app.use(express.json())
 app.use("/api/health", healthRoutes);
 app.use("/api/holdings", holdingRoutes);
 app.use('/api/positions', positionRoutes);

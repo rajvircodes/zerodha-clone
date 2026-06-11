@@ -8,3 +8,14 @@ export const getOrders = async () => {
 
   return response.data;
 };
+
+export const createOrder = async (
+  orderData
+) => {
+  const response = await axios.post(
+    API_URL,
+    orderData
+  );
+
+  return response.data;
+};
