@@ -4,7 +4,9 @@ import {
   createOrder,
 } from "../../../services/orders.service";
 
-function OrderForm() {
+function OrderForm({
+  onOrderCreated,
+}) {
   const [formData, setFormData] =
     useState({
       name: "",
@@ -26,6 +28,8 @@ function OrderForm() {
 
     try {
       await createOrder(formData);
+
+      onOrderCreated();
 
       alert(
         "Order Created Successfully"
