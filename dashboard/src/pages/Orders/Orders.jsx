@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { getOrders } from "../../services/orders.service";
+import {
+  getOrders,
+  deleteOrder,
+} from "../../services/orders.service";
 
 import DataList from "../../components/ui/DataList/DataList";
 import OrderForm from "../../components/ui/OrderForm/OrderForm";
@@ -25,13 +28,27 @@ function Orders() {
     fetchOrders();
   }, []);
 
+  const handleDelete = async (
+    orderId
+  ) => {
+    try {
+      await deleteOrder(orderId);
+
+      fetchOrders();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   if (loading) {
     return <h2>Loading...</h2>;
   }
 
   return (
     <>
-      <OrderForm onOrderCreated={fetchOrders} />
+      <OrderForm
+        onOrderCreated={fetchOrders}
+      />
 
       <DataList
         title="Orders"
@@ -48,6 +65,14 @@ function Orders() {
             <p>Price: ₹{order.price}</p>
 
             <p>Mode: {order.mode}</p>
+
+            <button
+              onClick={() =>
+                handleDelete(order._id)
+              }
+            >
+              Delete
+            </button>
           </div>
         )}
       />

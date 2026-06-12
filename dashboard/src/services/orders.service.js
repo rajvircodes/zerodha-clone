@@ -19,3 +19,14 @@ export const createOrder = async (
 
   return response.data;
 };
+
+
+export const deleteOrder = async (
+  orderId
+) => {
+  const response = await axios.delete(
+    `${API_URL}/${orderId}`
+  );
+
+  return response.data;
+};
