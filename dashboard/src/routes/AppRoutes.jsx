@@ -7,6 +7,8 @@ import Holdings from "../pages/Holdings/Holdings";
 import Positions from "../pages/Positions/Positions";
 import Orders from "../pages/Orders/Orders";
 import Funds from "../pages/Funds/Funds";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,16 @@ const router = createBrowserRouter([
         element: <Funds />,
       },
     ],
+  },
+
+  {
+    path: "/login",
+    element: <Login />,
+  },
+
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 
