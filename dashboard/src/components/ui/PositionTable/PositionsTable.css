@@ -1,0 +1,32 @@
+.positions-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-top: 2rem;
+
+  background: white;
+}
+
+.positions-table th,
+.positions-table td {
+  padding: 1rem;
+
+  border-bottom: 1px solid #eee;
+
+  text-align: left;
+}
+
+.positions-table th {
+  background: #f8f8f8;
+}
+
+.profit {
+  color: green;
+  font-weight: 600;
+}
+
+.loss {
+  color: red;
+  font-weight: 600;
+}

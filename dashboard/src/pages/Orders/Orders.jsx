@@ -6,8 +6,8 @@ import {
   updateOrder,
 } from "../../services/orders.service";
 
-import DataList from "../../components/ui/DataList/DataList";
 import OrderForm from "../../components/ui/OrderForm/OrderForm";
+import OrdersTable from "../../components/ui/OrdersTable/OrdersTable";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -25,6 +25,21 @@ function Orders() {
     }
   };
 
+  useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  const handleDelete = async (
+    orderId
+  ) => {
+    try {
+      await deleteOrder(orderId);
+
+      fetchOrders();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleEdit = async (
     order
@@ -52,22 +67,6 @@ function Orders() {
     }
   };
 
-  useEffect(() => {
-    fetchOrders();
-  }, []);
-
-  const handleDelete = async (
-    orderId
-  ) => {
-    try {
-      await deleteOrder(orderId);
-
-      fetchOrders();
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   if (loading) {
     return <h2>Loading...</h2>;
   }
@@ -78,38 +77,10 @@ function Orders() {
         onOrderCreated={fetchOrders}
       />
 
-      <DataList
-        title="Orders"
-        items={orders}
-        renderItem={(order) => (
-          <div
-            className="data-item"
-            key={order._id}
-          >
-            <h3>{order.name}</h3>
-
-            <p>Qty: {order.qty}</p>
-
-            <p>Price: ₹{order.price}</p>
-
-            <p>Mode: {order.mode}</p>
-
-            <button
-              onClick={() =>
-                handleDelete(order._id)
-              }
-            >
-              Delete
-            </button>
-            <button
-              onClick={() =>
-                handleEdit(order)
-              }
-            >
-              Edit
-            </button>
-          </div>
-        )}
+      <OrdersTable
+        orders={orders}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
       />
     </>
   );

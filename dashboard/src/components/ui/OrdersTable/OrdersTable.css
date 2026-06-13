@@ -1,0 +1,22 @@
+.orders-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-top: 2rem;
+
+  background: white;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 1rem;
+
+  border-bottom: 1px solid #eee;
+
+  text-align: left;
+}
+
+.orders-table th {
+  background: #f8f8f8;
+}
