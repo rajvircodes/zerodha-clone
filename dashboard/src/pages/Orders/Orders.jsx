@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {
   getOrders,
   deleteOrder,
+  updateOrder,
 } from "../../services/orders.service";
 
 import DataList from "../../components/ui/DataList/DataList";
@@ -21,6 +22,33 @@ function Orders() {
       console.error(error);
     } finally {
       setLoading(false);
+    }
+  };
+
+
+  const handleEdit = async (
+    order
+  ) => {
+    const newPrice = prompt(
+      "Enter New Price",
+      order.price
+    );
+
+    if (!newPrice) return;
+
+    try {
+      await updateOrder(
+        order._id,
+        {
+          ...order,
+          price:
+            Number(newPrice),
+        }
+      );
+
+      fetchOrders();
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -72,6 +100,13 @@ function Orders() {
               }
             >
               Delete
+            </button>
+            <button
+              onClick={() =>
+                handleEdit(order)
+              }
+            >
+              Edit
             </button>
           </div>
         )}

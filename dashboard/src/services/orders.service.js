@@ -29,3 +29,17 @@ export const deleteOrder = async (
 
   return response.data;
 };
+
+
+export const updateOrder = async (
+  orderId,
+  orderData
+) => {
+  const response =
+    await api.put(
+      `/orders/${orderId}`,
+      orderData
+    );
+
+  return response.data;
+};
