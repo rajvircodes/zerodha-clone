@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { getHoldings } from "../../services/holdings.service";
 
-import DataList from "../../components/ui/DataList/DataList";
+import HoldingsTable from "../../components/ui/HoldingsTable/HoldingsTable";
 
 function Holdings() {
   const [holdings, setHoldings] = useState([]);
@@ -29,24 +29,13 @@ function Holdings() {
   }
 
   return (
-    <DataList
-      title="Holdings"
-      items={holdings}
-      renderItem={(holding) => (
-        <div
-          className="data-item"
-          key={holding._id}
-        >
-          <h3>{holding.name}</h3>
+    <div>
+      <h1>Holdings</h1>
 
-          <p>Qty: {holding.qty}</p>
-
-          <p>Price: ₹{holding.price}</p>
-
-          <p>Net: {holding.net}</p>
-        </div>
-      )}
-    />
+      <HoldingsTable
+        holdings={holdings}
+      />
+    </div>
   );
 }
 

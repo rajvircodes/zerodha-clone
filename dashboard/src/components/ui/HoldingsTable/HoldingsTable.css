@@ -1,0 +1,26 @@
+.holdings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.holdings-table th,
+.holdings-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.holdings-table th {
+  background: #f8f8f8;
+}
+
+.profit {
+  color: green;
+  font-weight: 600;
+}
+
+.loss {
+  color: red;
+  font-weight: 600;
+}
