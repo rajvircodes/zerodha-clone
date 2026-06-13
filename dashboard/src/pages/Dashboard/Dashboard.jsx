@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { getHoldings } from "../../services/holdings.service";
+import SummaryCard from
+"../../components/ui/SummaryCard/SummaryCard";
 
 function Dashboard() {
   const [holdings, setHoldings] = useState([]);
@@ -35,31 +37,46 @@ function Dashboard() {
     currentValue - totalInvestment;
 
   return (
-    <div>
-      <h1>Dashboard Summary</h1>
+  <div>
+    <h1>Dashboard</h1>
 
-      <hr />
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns:
+          "repeat(4, 1fr)",
+        gap: "1rem",
+        marginTop: "2rem",
+      }}
+    >
+      <SummaryCard
+        title="Total Holdings"
+        value={holdings.length}
+      />
 
-      <h2>
-        Total Holdings: {holdings.length}
-      </h2>
+      <SummaryCard
+        title="Investment"
+        value={`₹${totalInvestment.toFixed(
+          2
+        )}`}
+      />
 
-      <h2>
-        Total Investment:
-        ₹{totalInvestment.toFixed(2)}
-      </h2>
+      <SummaryCard
+        title="Current Value"
+        value={`₹${currentValue.toFixed(
+          2
+        )}`}
+      />
 
-      <h2>
-        Current Value:
-        ₹{currentValue.toFixed(2)}
-      </h2>
-
-      <h2>
-        Profit / Loss:
-        ₹{profitLoss.toFixed(2)}
-      </h2>
+      <SummaryCard
+        title="Profit / Loss"
+        value={`₹${profitLoss.toFixed(
+          2
+        )}`}
+      />
     </div>
-  );
+  </div>
+);
 }
 
 export default Dashboard;
