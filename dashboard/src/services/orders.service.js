@@ -1,10 +1,8 @@
-import axios from "axios";
-
-const API_URL =
-  "http://localhost:5000/api/orders";
+import api from "./api";
 
 export const getOrders = async () => {
-  const response = await axios.get(API_URL);
+  const response =
+    await api.get("/orders");
 
   return response.data;
 };
@@ -12,21 +10,22 @@ export const getOrders = async () => {
 export const createOrder = async (
   orderData
 ) => {
-  const response = await axios.post(
-    API_URL,
-    orderData
-  );
+  const response =
+    await api.post(
+      "/orders",
+      orderData
+    );
 
   return response.data;
 };
 
-
 export const deleteOrder = async (
   orderId
 ) => {
-  const response = await axios.delete(
-    `${API_URL}/${orderId}`
-  );
+  const response =
+    await api.delete(
+      `/orders/${orderId}`
+    );
 
   return response.data;
 };

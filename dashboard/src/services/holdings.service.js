@@ -1,9 +1,9 @@
-import axios from "axios";
+import api from "./api";
 
-const API_URL = "http://localhost:5000/api/holdings";
 
 export const getHoldings = async () => {
-  const response = await axios.get(API_URL);
+  const response =
+    await api.get("/holdings");
 
   return response.data;
 };

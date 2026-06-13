@@ -1,10 +1,8 @@
-import axios from "axios";
-
-const API_URL =
-  "http://localhost:5000/api/positions";
+import api from "./api";
 
 export const getPositions = async () => {
-  const response = await axios.get(API_URL);
+  const response =
+    await api.get("/positions");
 
   return response.data;
 };
