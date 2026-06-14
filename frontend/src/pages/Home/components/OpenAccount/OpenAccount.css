@@ -23,11 +23,10 @@
   border: none;
   background: #387ed1;
   color: white;
-
-  padding: 14px 32px;
+  text-decoration: none;
+  padding: 20px 32px;
 
   font-size: 1rem;
-
   border-radius: 4px;
 
   cursor: pointer;

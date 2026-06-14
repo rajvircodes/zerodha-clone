@@ -17,6 +17,14 @@
   margin-bottom: 2rem;
 }
 
+.hero a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 24px;
+  cursor: pointer;
+
+}
+
 .hero button {
   padding: 12px 24px;
   cursor: pointer;

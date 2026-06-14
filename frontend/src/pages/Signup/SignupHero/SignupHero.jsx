@@ -13,9 +13,12 @@ function SignupHero() {
             millions of investors and traders.
           </p>
 
-          <button className="signup-btn">
-            Sign up now
-          </button>
+
+          <a className="signup-btn"
+  href="https://zerodha-clone-b8ir.vercel.app/register"
+>
+  Signup now
+</a>
         </div>
 
         <div className="signup-image">

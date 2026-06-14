@@ -13,9 +13,13 @@ const OpenAccount = () => {
                     and flat $20 Intraday and F&O trades
                 </p>
 
-                <button className='signup-btn'>
-                    Signup for free
-                </button>
+
+
+                <a className='signup-btn'
+                    href="https://zerodha-clone-b8ir.vercel.app/register"
+                >
+                    Signup now
+                </a>
 
             </div>
         </section>

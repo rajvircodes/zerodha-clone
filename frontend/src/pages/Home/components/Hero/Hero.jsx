@@ -15,7 +15,13 @@ function Hero() {
         mutual funds, ETFs, bonds, and more.
       </p>
 
-      <button>Sign up for free</button>
+ <button>
+     <a
+  href="https://zerodha-clone-b8ir.vercel.app/register"
+>
+  Signup
+</a> 
+ </button>
     </section>
   );
 }
