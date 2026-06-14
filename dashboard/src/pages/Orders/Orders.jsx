@@ -1,13 +1,8 @@
 import { useEffect, useState } from "react";
-
-import {
-  getOrders,
-  deleteOrder,
-  updateOrder,
-} from "../../services/orders.service";
-
+import { getOrders, deleteOrder, updateOrder } from "../../services/orders.service";
 import OrderForm from "../../components/ui/OrderForm/OrderForm";
 import OrdersTable from "../../components/ui/OrdersTable/OrdersTable";
+import './Order.css'
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -16,7 +11,6 @@ function Orders() {
   const fetchOrders = async () => {
     try {
       const data = await getOrders();
-
       setOrders(data);
     } catch (error) {
       console.error(error);
@@ -26,70 +20,55 @@ function Orders() {
   };
 
   useEffect(() => {
+    document.title = "Orders | Kite";
     fetchOrders();
-  }, []);
+  }, []); 
 
-  const handleDelete = async (
-    orderId
-  ) => {
+  const handleDelete = async (orderId) => {
     try {
       await deleteOrder(orderId);
-
-      fetchOrders();
+      fetchOrders(); 
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleEdit = async (
-    order
-  ) => {
-    const newPrice = prompt(
-      "Enter New Price",
-      order.price
-    );
-
+  const handleEdit = async (order) => {
+    const newPrice = prompt("Enter New Price", order.price);
     if (!newPrice) return;
 
-    try {
-      await updateOrder(
-        order._id,
-        {
-          ...order,
-          price:
-            Number(newPrice),
-        }
-      );
+    const orderId = order._id || order.id; 
 
-      fetchOrders();
+    try {
+      await updateOrder(orderId, {
+        ...order,
+        price: Number(newPrice),
+      });
+      fetchOrders(); 
     } catch (error) {
       console.error(error);
     }
   };
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <div className="loading">
+  Loading Data...
+</div>
   }
+if (!orders.length) {
+  return (
+    <h2>
+      No order found
+    </h2>
+  );
+}
+  
 
   return (
     <div>
-      <h1
-    style={{
-      marginBottom: "1rem",
-    }}
-  >
-    Orders
-  </h1>
-    
-      <OrderForm
-        onOrderCreated={fetchOrders}
-      />
-  
-      <OrdersTable
-        orders={orders}
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
+      <h1 style={{ marginBottom: "1rem" }}>Orders</h1>
+      <OrderForm onOrderCreated={fetchOrders} />
+      <OrdersTable orders={orders} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   );
 }

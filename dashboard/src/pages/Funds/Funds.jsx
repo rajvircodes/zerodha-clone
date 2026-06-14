@@ -1,4 +1,5 @@
 import "./Funds.css";
+import { useEffect } from "react";
 
 function Funds() {
   const availableMargin =
@@ -8,6 +9,11 @@ function Funds() {
 
   const openingBalance =
     160000;
+useEffect(() => {
+  document.title =
+    "Funds | Kite";
+}, []);
+    
 
   return (
     <div className="funds-page">
