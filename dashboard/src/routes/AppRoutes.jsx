@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 
 import DashboardLayout from "../components/layout/DashboardLayout/DashboardLayout";
 import ProtectedRoute from "../components/common/ProtectedRoute/ProtectedRoute";
+import PublicRoute from
+  "../components/common/PublicRoute/PublicRoute";
 
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Holdings from "../pages/Holdings/Holdings";
@@ -15,10 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-  <ProtectedRoute>
-    <DashboardLayout />
-  </ProtectedRoute>
-),
+      <ProtectedRoute>
+        <DashboardLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,
@@ -45,12 +47,20 @@ const router = createBrowserRouter([
 
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <PublicRoute>
+        <Login />
+      </PublicRoute>
+    ),
   },
 
   {
     path: "/register",
-    element: <Register />,
+    element: (
+      <PublicRoute>
+        <Register />
+      </PublicRoute>
+    ),
   },
 ]);
 
