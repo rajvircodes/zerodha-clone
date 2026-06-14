@@ -1,14 +1,19 @@
 import "./HoldingsTable.css";
 
-function HoldingsTable({ holdings }) {
+function HoldingsTable({
+  holdings,
+}) {
   return (
+    <div className="table-container">
+
+    
     <table className="holdings-table">
       <thead>
         <tr>
           <th>Stock</th>
-          <th>Qty</th>
-          <th>Avg</th>
-          <th>Price</th>
+          <th>Quantity</th>
+          <th>Average</th>
+          <th>Current</th>
           <th>P/L</th>
         </tr>
       </thead>
@@ -16,18 +21,29 @@ function HoldingsTable({ holdings }) {
       <tbody>
         {holdings.map((holding) => {
           const profit =
-            (holding.price - holding.avg) *
+            (holding.price -
+              holding.avg) *
             holding.qty;
 
           return (
             <tr key={holding._id}>
-              <td>{holding.name}</td>
+              <td>
+                <strong>
+                  {holding.name}
+                </strong>
+              </td>
 
-              <td>{holding.qty}</td>
+              <td>
+                {holding.qty}
+              </td>
 
-              <td>₹{holding.avg}</td>
+              <td>
+                ₹{holding.avg}
+              </td>
 
-              <td>₹{holding.price}</td>
+              <td>
+                ₹{holding.price}
+              </td>
 
               <td
                 className={
@@ -36,13 +52,17 @@ function HoldingsTable({ holdings }) {
                     : "loss"
                 }
               >
-                ₹{profit.toFixed(2)}
+                ₹
+                {profit.toFixed(
+                  2
+                )}
               </td>
             </tr>
           );
         })}
       </tbody>
     </table>
+    </div>
   );
 }
 

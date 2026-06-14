@@ -1,26 +1,74 @@
 .holdings-table {
   width: 100%;
+
   border-collapse: collapse;
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
   margin-top: 2rem;
+
+  box-shadow:
+    0 6px 20px
+    rgba(0, 0, 0, 0.05);
 }
 
-.holdings-table th,
-.holdings-table td {
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
-  text-align: left;
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.holdings-table {
+  min-width: 700px;
+}
+.holdings-table thead {
+  background: #f8fafc;
 }
 
 .holdings-table th {
-  background: #f8f8f8;
+  padding: 18px;
+
+  text-align: left;
+
+  color: #6b7280;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.holdings-table td {
+  padding: 18px;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  color: #111827;
+}
+
+.holdings-table tbody tr {
+  transition: 0.25s;
+}
+
+.holdings-table tbody tr:hover {
+  background: #f8fafc;
 }
 
 .profit {
-  color: green;
-  font-weight: 600;
+  color: #00b386;
+
+  font-weight: 700;
 }
 
 .loss {
-  color: red;
-  font-weight: 600;
+  color: #ef4444;
+
+  font-weight: 700;
 }

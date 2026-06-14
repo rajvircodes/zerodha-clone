@@ -45,3 +45,13 @@
 
   transform: translateY(-2px);
 }
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 1rem;
+  }
+
+  .topbar h3 {
+    font-size: 1.1rem;
+  }
+}

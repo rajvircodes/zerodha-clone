@@ -30,8 +30,13 @@ function Holdings() {
 
   return (
     <div>
-      <h1>Holdings</h1>
-
+      <h1
+  style={{
+    marginBottom: "1rem",
+  }}
+>
+  Holdings
+</h1>
       <HoldingsTable
         holdings={holdings}
       />

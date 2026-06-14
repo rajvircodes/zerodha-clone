@@ -1,25 +1,18 @@
 import { useState } from "react";
-
-import {
-  createOrder,
-} from "../../../services/orders.service";
-
-function OrderForm({
-  onOrderCreated,
-}) {
-  const [formData, setFormData] =
-    useState({
-      name: "",
-      qty: "",
-      price: "",
-      mode: "BUY",
-    });
+import { createOrder } from "../../../services/orders.service";
+import './OrderForm.css'
+function OrderForm({ onOrderCreated }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    qty: "",
+    price: "",
+    mode: "BUY",
+  });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]:
-        e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -27,14 +20,18 @@ function OrderForm({
     e.preventDefault();
 
     try {
-      await createOrder(formData);
+      // Cast qty and price to numbers if your backend expects them as numbers
+      await createOrder({
+        ...formData,
+        qty: Number(formData.qty),
+        price: Number(formData.price),
+      });
 
       onOrderCreated();
 
-      alert(
-        "Order Created Successfully"
-      );
+      alert("Order Created Successfully");
 
+      // Reset form
       setFormData({
         name: "",
         qty: "",
@@ -43,52 +40,65 @@ function OrderForm({
       });
     } catch (error) {
       console.error(error);
+      alert("Failed to create order. Check console for details.");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Stock Name"
-        value={formData.name}
-        onChange={handleChange}
-      />
+    <form className="order-form" onSubmit={handleSubmit}>
+      <h2>Create Order</h2>
 
-      <input
-        type="number"
-        name="qty"
-        placeholder="Quantity"
-        value={formData.qty}
-        onChange={handleChange}
-      />
+      <div className="order-form-grid">
+        <label>
+          Item Name:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </label>
 
-      <input
-        type="number"
-        name="price"
-        placeholder="Price"
-        value={formData.price}
-        onChange={handleChange}
-      />
+        <label>
+          Quantity:
+          <input
+            type="number"
+            name="qty"
+            value={formData.qty}
+            onChange={handleChange}
+            required
+          />
+        </label>
 
-      <select
-        name="mode"
-        value={formData.mode}
-        onChange={handleChange}
-      >
-        <option value="BUY">
-          BUY
-        </option>
+        <label>
+          Price:
+          <input
+            type="number"
+            step="0.01"
+            name="price"
+            value={formData.price}
+            onChange={handleChange}
+            required
+          />
+        </label>
 
-        <option value="SELL">
-          SELL
-        </option>
-      </select>
+        <label>
+          Mode:
+          <select
+            name="mode"
+            value={formData.mode}
+            onChange={handleChange}
+          >
+            <option value="BUY">BUY</option>
+            <option value="SELL">SELL</option>
+          </select>
+        </label>
 
-      <button type="submit">
-        Create Order
-      </button>
+        <button className="create-order-btn" type="submit">
+          Create Order
+        </button>
+      </div> {/* Fixed: Added missing closing div tag */}
     </form>
   );
 }

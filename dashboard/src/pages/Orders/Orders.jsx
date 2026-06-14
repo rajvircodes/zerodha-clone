@@ -72,17 +72,25 @@ function Orders() {
   }
 
   return (
-    <>
+    <div>
+      <h1
+    style={{
+      marginBottom: "1rem",
+    }}
+  >
+    Orders
+  </h1>
+    
       <OrderForm
         onOrderCreated={fetchOrders}
       />
-
+  
       <OrdersTable
         orders={orders}
         onEdit={handleEdit}
         onDelete={handleDelete}
       />
-    </>
+    </div>
   );
 }
 
