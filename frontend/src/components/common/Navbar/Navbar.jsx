@@ -11,7 +11,11 @@ const Navbar = () => {
           </Link>
         </div>
         <div className='nav-links'>
-          <Link to="/signup">Signup</Link>
+          <a
+  href="https://zerodha-clone-b8ir.vercel.app/register"
+>
+  Signup
+</a>
           <Link to="/about">About</Link>
           <Link to="/products">Products</Link>
           <Link to="/pricing">Pricing</Link>
