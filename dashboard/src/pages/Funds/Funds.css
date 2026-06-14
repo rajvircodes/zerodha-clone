@@ -1,0 +1,48 @@
+.funds-page h1 {
+  margin-bottom: 2rem;
+}
+
+.funds-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.fund-card {
+  background: white;
+
+  padding: 1.8rem;
+
+  border-radius: 18px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow:
+    0 6px 20px
+    rgba(0, 0, 0, 0.05);
+
+  transition: 0.3s;
+}
+
+.fund-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.08);
+}
+
+.fund-card p {
+  color: #6b7280;
+
+  margin-bottom: 0.8rem;
+}
+
+.fund-card h2 {
+  color: #111827;
+
+  font-size: 2rem;
+}
