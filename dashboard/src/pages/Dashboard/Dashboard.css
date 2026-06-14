@@ -1,0 +1,54 @@
+.dashboard-page h1 {
+  margin-bottom: 2rem;
+}
+
+.summary-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 1.5rem;
+
+  margin-bottom: 2rem;
+}
+
+.dashboard-sections {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.dashboard-card {
+  background: white;
+
+  padding: 1.5rem;
+
+  border-radius: 18px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow:
+    0 6px 20px
+    rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card h2 {
+  margin-bottom: 1rem;
+
+  color: #111827;
+}
+
+.dashboard-card p,
+.dashboard-card li {
+  color: #6b7280;
+
+  margin-bottom: 0.75rem;
+}
+
+.dashboard-card ul {
+  list-style: none;
+}
