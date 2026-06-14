@@ -35,7 +35,13 @@ function Positions() {
 
   return (
     <div>
-      <h1>Positions</h1>
+     <h1
+  style={{
+    marginBottom: "1rem",
+  }}
+>
+  Positions
+</h1>
 
       <PositionsTable
         positions={positions}

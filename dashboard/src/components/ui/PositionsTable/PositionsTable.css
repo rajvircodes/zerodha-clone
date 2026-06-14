@@ -1,32 +1,85 @@
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+}
+
 .positions-table {
   width: 100%;
 
+  min-width: 850px;
+
   border-collapse: collapse;
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
 
   margin-top: 2rem;
 
-  background: white;
+  box-shadow:
+    0 6px 20px
+    rgba(0, 0, 0, 0.05);
 }
 
-.positions-table th,
-.positions-table td {
-  padding: 1rem;
-
-  border-bottom: 1px solid #eee;
-
-  text-align: left;
+.positions-table thead {
+  background: #f8fafc;
 }
 
 .positions-table th {
-  background: #f8f8f8;
+  padding: 18px;
+
+  text-align: left;
+
+  color: #6b7280;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.positions-table td {
+  padding: 18px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.positions-table tbody tr {
+  transition: 0.25s;
+}
+
+.positions-table tbody tr:hover {
+  background: #f8fafc;
 }
 
 .profit {
-  color: green;
-  font-weight: 600;
+  color: #00b386;
+
+  font-weight: 700;
 }
 
 .loss {
-  color: red;
+  color: #ef4444;
+
+  font-weight: 700;
+}
+
+.product-tag {
+  background: #eef5ff;
+
+  color: #387ed1;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 0.85rem;
+
   font-weight: 600;
 }
