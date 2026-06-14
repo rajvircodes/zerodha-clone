@@ -4,7 +4,7 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <aside className="sidebar">
-      <h2>Kite</h2>
+      <h2>Kite Dashboard</h2>
 
       <nav>
         <Link to="/">Dashboard</Link>

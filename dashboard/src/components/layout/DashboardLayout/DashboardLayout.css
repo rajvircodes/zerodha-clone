@@ -1,11 +1,21 @@
 .dashboard-layout {
   display: flex;
+
+  min-height: 100vh;
+
+  background: #f8fafc;
 }
 
 .dashboard-content {
   flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
 }
 
-main {
+.dashboard-content main {
+  flex: 1;
+
   padding: 2rem;
 }
