@@ -6,9 +6,13 @@ function SummaryCard({
 }) {
   return (
     <div className="summary-card">
-      <h3>{title}</h3>
+      <p className="summary-title">
+        {title}
+      </p>
 
-      <h2>{value}</h2>
+      <h2 className="summary-value">
+        {value}
+      </h2>
     </div>
   );
 }

@@ -1,22 +1,39 @@
 .summary-card {
   background: white;
 
-  border: 1px solid #e6e6e6;
-
-  border-radius: 12px;
-
   padding: 1.5rem;
 
+  border-radius: 18px;
+
+  border: 1px solid #e5e7eb;
+
   box-shadow:
-    0 2px 8px
+    0 6px 20px
     rgba(0, 0, 0, 0.05);
+
+  transition: all 0.3s ease;
 }
 
-.summary-card h3 {
-  color: #666;
-  margin-bottom: 0.5rem;
+.summary-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.08);
 }
 
-.summary-card h2 {
+.summary-title {
+  color: #6b7280;
+
+  font-size: 0.95rem;
+
+  margin-bottom: 0.75rem;
+}
+
+.summary-value {
+  color: #111827;
+
   font-size: 2rem;
+
+  font-weight: 700;
 }
