@@ -1,24 +1,22 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-import {
-  loginUser,
-} from "../../services/auth.service";
+import { loginUser } from "../../services/auth.service";
+
+import "./Login.css";
 
 function Login() {
   const navigate = useNavigate();
 
-  const [formData, setFormData] =
-    useState({
-      email: "",
-      password: "",
-    });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]:
-        e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -26,10 +24,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const data =
-        await loginUser(
-          formData
-        );
+      const data = await loginUser(formData);
 
       localStorage.setItem(
         "token",
@@ -39,31 +34,55 @@ function Login() {
       navigate("/");
     } catch (error) {
       console.error(error);
+      alert("Login Failed");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-      />
+    <div className="auth-page">
+      <div className="auth-card">
 
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={formData.password}
-        onChange={handleChange}
-      />
+        <div className="auth-header">
+          <h1>Zerodha Clone</h1>
+          <p>
+            Welcome back 
+          </p>
+        </div>
 
-      <button type="submit">
-        Login
-      </button>
-    </form>
+        <form
+          onSubmit={handleSubmit}
+          className="auth-form"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+
+          <button type="submit">
+            Login
+          </button>
+        </form>
+
+        <p className="auth-footer">
+          Don't have an account?
+          <Link to="/register">
+            Register
+          </Link>
+        </p>
+
+      </div>
+    </div>
   );
 }
 
