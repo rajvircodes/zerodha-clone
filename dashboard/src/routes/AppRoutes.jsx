@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 
 import DashboardLayout from "../components/layout/DashboardLayout/DashboardLayout";
 import ProtectedRoute from "../components/common/ProtectedRoute/ProtectedRoute";
+import NotFound from
+"../pages/NotFound/NotFound";
 import PublicRoute from
   "../components/common/PublicRoute/PublicRoute";
 
@@ -42,6 +44,7 @@ const router = createBrowserRouter([
         path: "funds",
         element: <Funds />,
       },
+      
     ],
   },
 
@@ -62,6 +65,11 @@ const router = createBrowserRouter([
       </PublicRoute>
     ),
   },
+
+  {
+  path: "*",
+  element: <NotFound />,
+}
 ]);
 
 export default router;

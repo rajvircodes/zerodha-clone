@@ -1,0 +1,49 @@
+.not-found {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 2rem;
+}
+
+.not-found h1 {
+  font-size: 6rem;
+
+  color: #387ed1;
+
+  margin-bottom: 1rem;
+}
+
+.not-found h2 {
+  margin-bottom: 1rem;
+
+  color: #111827;
+}
+
+.not-found p {
+  color: #6b7280;
+
+  margin-bottom: 1.5rem;
+}
+
+.not-found a {
+  text-decoration: none;
+
+  background: #387ed1;
+
+  color: white;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+}
