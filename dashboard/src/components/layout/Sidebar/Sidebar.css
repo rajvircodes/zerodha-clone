@@ -15,9 +15,9 @@
 }
 
 .sidebar h2 {
-  font-size: 1.8rem;
-
   color: #387ed1;
+
+  font-size: 1.8rem;
 
   font-weight: 700;
 }
@@ -39,7 +39,7 @@
 
   border-radius: 10px;
 
-  transition: all 0.25s ease;
+  transition: 0.25s;
 
   font-weight: 500;
 }
@@ -48,10 +48,15 @@
   background: #eef5ff;
 
   color: #387ed1;
-
-  transform: translateX(4px);
 }
 
+.sidebar nav a.active {
+  background: #eef5ff;
+
+  color: #387ed1;
+
+  font-weight: 600;
+}
 
 @media (max-width: 768px) {
   .sidebar {
@@ -69,22 +74,23 @@
   }
 
   .sidebar nav {
-    display: flex;
+    flex-direction: row;
 
     overflow-x: auto;
 
-    flex-wrap: nowrap;
+    scrollbar-width: none;
 
     gap: 0.75rem;
+  }
 
-    padding-bottom: 0.5rem;
+  .sidebar nav::-webkit-scrollbar {
+    display: none;
   }
 
   .sidebar nav a {
-    flex: none;
-
-    min-width: fit-content;
-
     white-space: nowrap;
+
+    flex: none;
   }
 }
+

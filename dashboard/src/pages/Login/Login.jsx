@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import { loginUser } from "../../services/auth.service";
 
@@ -31,10 +32,18 @@ function Login() {
         data.token
       );
 
+      toast.success(
+        "Login Successful 🚀"
+      );
+
       navigate("/");
     } catch (error) {
       console.error(error);
-      alert("Login Failed");
+
+      toast.error(
+        error?.response?.data?.message ||
+          "Login Failed"
+      );
     }
   };
 
@@ -44,8 +53,9 @@ function Login() {
 
         <div className="auth-header">
           <h1>Zerodha Clone</h1>
+
           <p>
-            Welcome back 
+            Welcome back 👋
           </p>
         </div>
 
