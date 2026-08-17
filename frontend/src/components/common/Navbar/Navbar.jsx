@@ -11,19 +11,24 @@ const Navbar = () => {
           </Link>
         </div>
         <div className='nav-links'>
-          <details className="nav-menu">
-            <summary aria-label="Toggle navigation menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </summary>
-            <Link to="/signup">Signup</Link>
-            <Link to="/about">About</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/pricing">Pricing</Link>
-            <Link to="/support">Support</Link>
-          </details>
+          <Link to="/signup">Signup</Link>
+          <Link to="/about">About</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/pricing">Pricing</Link>
+          <Link to="/support">Support</Link>
         </div>
+        <details className="nav-menu">
+          <summary aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <Link to="/signup">Signup</Link>
+          <Link to="/about">About</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/pricing">Pricing</Link>
+          <Link to="/support">Support</Link>
+        </details>
       </nav>
     </header>
   )

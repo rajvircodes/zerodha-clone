@@ -16,17 +16,14 @@ nav {
 
 .nav-links {
     display: flex;
-}
-
-.nav-menu {
-    display: flex;
     gap: 2rem;
 }
 
-.nav-menu summary {
+.nav-menu {
     display: none;
 }
 
+.nav-links a,
 .nav-menu a {
     text-decoration: none;
     color: #666;
@@ -38,12 +35,13 @@ nav {
     }
 
     .nav-links {
-        margin-left: auto;
+        display: none;
     }
 
     .nav-menu {
         position: relative;
         display: block;
+        margin-left: auto;
     }
 
     .nav-menu summary {
