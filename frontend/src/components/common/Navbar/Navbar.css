@@ -19,17 +19,18 @@ nav {
     gap: 2rem;
 }
 
-.nav-menu {
+.mobile-menu-toggle,
+.mobile-nav-menu {
     display: none;
 }
 
 .nav-links a,
-.nav-menu a {
+.mobile-nav-menu a {
     text-decoration: none;
     color: #666;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
     nav {
         position: relative;
     }
@@ -38,13 +39,7 @@ nav {
         display: none;
     }
 
-    .nav-menu {
-        position: relative;
-        display: block;
-        margin-left: auto;
-    }
-
-    .nav-menu summary {
+    .mobile-menu-toggle {
         width: 44px;
         height: 44px;
         display: flex;
@@ -52,17 +47,15 @@ nav {
         align-items: center;
         justify-content: center;
         gap: 5px;
-        list-style: none;
+        margin-left: auto;
+        padding: 0;
+        background: #fff;
         border: 1px solid #e5e7eb;
         border-radius: 6px;
         cursor: pointer;
     }
 
-    .nav-menu summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .nav-menu summary span {
+    .mobile-menu-toggle span {
         width: 20px;
         height: 2px;
         display: block;
@@ -70,28 +63,34 @@ nav {
         border-radius: 999px;
     }
 
-    .nav-menu > a {
-        display: none;
-    }
-
-    .nav-menu[open] {
+    .mobile-nav-menu {
         position: absolute;
-        top: 0;
+        top: calc(100% + 0.75rem);
         right: 0;
         z-index: 10;
         min-width: 13rem;
         padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
         background: #fff;
         border: 1px solid #e5e7eb;
         border-radius: 8px;
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-0.5rem);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
     }
 
-    .nav-menu[open] summary {
-        margin-left: auto;
+    .mobile-nav-menu.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
     }
 
-    .nav-menu[open] > a {
+    .mobile-nav-menu a {
         min-height: 44px;
         display: flex;
         align-items: center;
@@ -99,8 +98,8 @@ nav {
         border-radius: 4px;
     }
 
-    .nav-menu[open] > a:hover,
-    .nav-menu[open] > a:focus-visible {
+    .mobile-nav-menu a:hover,
+    .mobile-nav-menu a:focus-visible {
         background: #f4f4f9;
         outline: none;
     }
