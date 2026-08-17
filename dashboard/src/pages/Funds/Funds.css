@@ -46,3 +46,20 @@
 
   font-size: 2rem;
 }
+
+@media (max-width: 640px) {
+  .funds-page h1 {
+    margin-bottom: 1.25rem;
+    font-size: 1.75rem;
+  }
+
+  .funds-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .fund-card {
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+}

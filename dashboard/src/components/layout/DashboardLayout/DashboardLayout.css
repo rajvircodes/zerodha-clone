@@ -17,6 +17,7 @@
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
+  min-width: 0;
 }
 
 @media (max-width: 768px) {
@@ -26,5 +27,11 @@
 
   .dashboard-page-content {
     padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-page-content {
+    padding: 1rem;
   }
 }

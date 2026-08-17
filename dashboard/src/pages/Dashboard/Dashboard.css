@@ -1,5 +1,6 @@
 .dashboard-page h1 {
   margin-bottom: 2rem;
+  overflow-wrap: anywhere;
 }
 
 .summary-grid {
@@ -51,4 +52,30 @@
 
 .dashboard-card ul {
   list-style: none;
+}
+
+@media (max-width: 640px) {
+  .dashboard-page h1,
+  .funds-page h1 {
+    margin-bottom: 1.25rem;
+    font-size: 1.75rem;
+  }
+
+  .summary-grid,
+  .dashboard-sections {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-card,
+  .summary-card,
+  .fund-card {
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+
+  .summary-value {
+    font-size: 1.75rem;
+  }
 }

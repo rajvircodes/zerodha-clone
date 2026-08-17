@@ -47,3 +47,14 @@
 
   font-weight: 600;
 }
+
+@media (max-width: 640px) {
+  .not-found {
+    min-height: 100dvh;
+    padding: 1.5rem;
+  }
+
+  .not-found h1 {
+    font-size: clamp(4rem, 24vw, 6rem);
+  }
+}

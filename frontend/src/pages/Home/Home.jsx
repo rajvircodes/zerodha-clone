@@ -7,11 +7,11 @@ import TrustSection from "./components/TrustSection/TrustSection"
 const Home = () => {
   return (
     <>
-      <Hero/>
-      <TrustSection/>
-      <Ecosystem/>
-      <PricingSection/>
-      <OpenAccount/>
+      <Hero />
+      <TrustSection />
+      <Ecosystem />
+      <PricingSection />
+      <OpenAccount />
     </>
   )
 }

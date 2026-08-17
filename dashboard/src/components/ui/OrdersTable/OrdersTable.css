@@ -112,3 +112,34 @@
 .delete-btn:hover {
   opacity: 0.9;
 }
+
+@media (max-width: 640px) {
+  .orders-table {
+    min-width: 0;
+    margin-top: 1.25rem;
+    table-layout: fixed;
+    font-size: 0.85rem;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 0.75rem 0.4rem;
+    overflow-wrap: anywhere;
+  }
+
+  .orders-table th:nth-child(3),
+  .orders-table td:nth-child(3) {
+    display: none;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    min-height: 36px;
+    padding: 0.4rem 0.5rem;
+  }
+}

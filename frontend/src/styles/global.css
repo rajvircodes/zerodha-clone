@@ -10,5 +10,150 @@ body {
   background: #f4f4f9;
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  body header {
+    padding: 1.25rem 2rem;
+  }
+
+  body .mission-container,
+  body .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body .pricing-grid,
+  body .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body .trust-container,
+  body .ecosystem-container,
+  body .pricing-container,
+  body .signup-hero-container {
+    gap: 2.5rem;
+  }
+
+  body .pricing-cards {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body header {
+    padding: 1rem;
+  }
+
+  body .footer {
+    margin-top: 2rem;
+    padding-top: 2.5rem;
+  }
+
+  body .footer-container {
+    padding: 0 1.25rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  body .footer-bottom {
+    margin-top: 2rem;
+    padding: 1.25rem;
+  }
+
+  body .hero,
+  body .about-hero,
+  body .products-hero,
+  body .pricing-hero,
+  body .support-hero,
+  body .signup-hero,
+  body .trust-section,
+  body .ecosystem-section,
+  body .pricing-section,
+  body .mission-section,
+  body .open-account,
+  body .support-cards,
+  body .signup-page,
+  body .support-page {
+    padding: 3rem 1.25rem;
+  }
+
+  body .hero h1,
+  body .about-hero h1,
+  body .products-hero h1,
+  body .pricing-hero h1,
+  body .support-hero h1,
+  body .signup-content h1 {
+    font-size: clamp(2rem, 9vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  body .open-account h2,
+  body .ecosystem-content h2,
+  body .pricing-content h2,
+  body .trust-heading {
+    font-size: clamp(1.75rem, 8vw, 2.2rem);
+    line-height: 1.25;
+  }
+
+  body .trust-container,
+  body .ecosystem-container,
+  body .pricing-container,
+  body .signup-hero-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  body .trust-image,
+  body .ecosystem-image,
+  body .signup-image {
+    width: 100%;
+    order: 2;
+  }
+
+  body .trust-image img {
+    margin: 0 auto;
+  }
+
+  body .trust-grid,
+  body .pricing-grid,
+  body .support-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  body .products-grid {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  body .pricing-grid {
+    padding: 1.25rem;
+  }
+
+  body .pricing-cards,
+  body .ecosystem-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  body .pricing-card,
+  body .product-card,
+  body .support-card {
+    padding: 1.5rem;
+  }
+
+  body .signup-btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+  }
 }
 
